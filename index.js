@@ -15,9 +15,17 @@ function clickHandler(initial, qty, final) {
     let costPrice = initial * qty;
     let sellPrice = final * qty;
     if (costPrice < sellPrice) {
-      console.log(`Yay you just earned a profit of ${sellPrice - costPrice}`);
+      let profit = sellPrice - costPrice;
+      console.log(
+        `Yay you just earned an absolute profit of ${profit} which is ${
+          (profit / costPrice) * 100
+        }`
+      );
     } else if (costPrice > sellPrice) {
-      console.log(`Aww you just lost ${costPrice - sellPrice} from this stock`);
+      let loss = costPrice - sellPrice;
+      console.log(
+        `Aww you just lost ${loss} which is ${(loss / costPrice) * 100}`
+      );
     } else {
       console.log(`No profit no loss`);
     }
@@ -25,3 +33,5 @@ function clickHandler(initial, qty, final) {
     console.log("Please enter all details");
   }
 }
+
+// TODO: Add proper UI
