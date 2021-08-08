@@ -1,0 +1,30 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+main {
+  text-align: center;
+  padding-top: 2rem;
+  height: 100%;
+  background-color: rgb(245, 248, 70);
+  padding-bottom: 2rem;
+}
+
+.label,
+input,
+button,
+#output {
+  margin: 1.3rem;
+  font-size: 1.3rem;
+}
+
+button {
+  display: block;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  background-color: rgb(174, 104, 240);
+}
+
+
