@@ -6,10 +6,15 @@
 
 main {
   text-align: center;
-  padding-top: 2rem;
+  /* padding-top: 2rem; */
   height: 100%;
   background-color: rgb(245, 248, 70);
   padding-bottom: 2rem;
+}
+
+header {
+  background-color: cornflowerblue;
+  padding: 1rem;
 }
 
 .label,
@@ -18,6 +23,12 @@ button,
 #output {
   margin: 1.3rem;
   font-size: 1.3rem;
+}
+
+.info {
+  font-size: 1.1rem;
+  margin: 1.3rem auto;
+  width: 75%;
 }
 
 button {
