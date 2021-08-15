@@ -5,12 +5,17 @@ const check = document.querySelector("#check");
 const output = document.querySelector("#output");
 const main = document.querySelector("#main");
 
+const happyGif = document.querySelector("#happy");
+const sadGif = document.querySelector("#sad");
+
 check.addEventListener("click", () => {
   // @ts-ignore
   clickHandler(priceInitial.value, quantity.value, priceToday.value, output);
 });
 
 function clickHandler(initial, qty, final, op) {
+  happyGif.style.display = "none";
+  sadGif.style.display = "none";
   main.style.backgroundColor = "rgb(245, 248, 70)";
   if (initial !== "" && qty !== "" && final !== "") {
     initial = parseFloat(initial);
@@ -21,9 +26,7 @@ function clickHandler(initial, qty, final, op) {
     if (costPrice < sellPrice) {
       let profit = sellPrice - costPrice;
       let profitPercent = ((profit / costPrice) * 100).toFixed(2);
-      console.log(
-        `Yay you just earned an absolute profit of ₹${profit} which is ${profitPercent}%`
-      );
+      happyGif.style.display = "block";
       output.textContent = `Yay you just earned an absolute profit of ₹${profit} which is ${profitPercent}% of the initial price`;
       if (parseFloat(profitPercent) >= 50) {
         main.style.backgroundColor = "green";
@@ -31,7 +34,7 @@ function clickHandler(initial, qty, final, op) {
     } else if (costPrice > sellPrice) {
       let loss = costPrice - sellPrice;
       let lossPercent = ((loss / costPrice) * 100).toFixed(2);
-      console.log(`Aww you just lost ₹${loss} which is ${lossPercent}%`);
+      sadGif.style.display = "block";
       output.textContent = `Aww you just lost ₹${loss} which is ${lossPercent}% of the initial price`;
       if (parseFloat(lossPercent) >= 50) {
         main.style.backgroundColor = "red";

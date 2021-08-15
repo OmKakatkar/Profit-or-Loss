@@ -27,4 +27,7 @@ button {
   background-color: rgb(174, 104, 240);
 }
 
-
+.tenor-gif-embed {
+  margin: 0 auto;
+  display: none;
+}
